@@ -1,5 +1,6 @@
 
 import React, { useEffect, useRef, useState } from 'react';
+import { Heart, Music, FlowerIcon } from 'lucide-react';
 
 interface PoemSectionProps {
   text: string;
@@ -36,13 +37,34 @@ const PoemSection: React.FC<PoemSectionProps> = ({ text, index }) => {
     };
   }, []);
   
+  // Add decorative icon based on verse index
+  const getVerseIcon = () => {
+    switch(index) {
+      case 0: return <Heart className="text-alice-red animate-pulse-gentle" size={20} />;
+      case 1: return <FlowerIcon className="text-alice-rose animate-pulse-gentle" size={20} />;
+      case 2: return <Heart className="text-alice-red animate-pulse-gentle" size={20} />;
+      case 3: return <Music className="text-alice-rose animate-pulse-gentle" size={20} />;
+      default: return null;
+    }
+  };
+  
   return (
     <div 
       ref={sectionRef} 
-      className={`poem-paragraph opacity-0 ${isVisible ? 'animate-fade-in' : ''}`}
+      className={`poem-paragraph relative opacity-0 ${isVisible ? 'animate-fade-in' : ''} border-l-2 border-alice-red/40 pl-4 md:pl-6`}
       style={{ animationDelay: `${index * 0.2}s` }}
     >
-      {text}
+      <div className="absolute -left-2.5 top-0 bg-alice-background p-1">
+        {getVerseIcon()}
+      </div>
+      <div className="mb-2 italic text-alice-rose/80 text-sm">
+        {index === 0 && "A rosa mais bela do jardim..."}
+        {index === 1 && "Uma rainha em meu reino..."}
+        {index === 2 && "Minha dependência..."}
+        {index === 3 && "Para sempre..."}
+      </div>
+      <p className="poem-text drop-shadow-glow">{text}</p>
+      <div className="verse-decoration mt-4 h-px w-1/3 mx-auto bg-gradient-to-r from-transparent via-alice-red/60 to-transparent"></div>
     </div>
   );
 };
