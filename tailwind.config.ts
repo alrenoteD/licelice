@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -52,6 +53,13 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				// Custom colors for Alice's website
+				alice: {
+					background: "#000000",
+					red: "#ea384c",
+					rose: "#FFDEE2",
+					gold: "#F1F1F1", 
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -70,25 +78,49 @@ export default {
 			},
 			keyframes: {
 				'accordion-down': {
-					from: {
-						height: '0'
-					},
-					to: {
-						height: 'var(--radix-accordion-content-height)'
-					}
+					from: { height: '0' },
+					to: { height: 'var(--radix-accordion-content-height)' }
 				},
 				'accordion-up': {
-					from: {
-						height: 'var(--radix-accordion-content-height)'
-					},
-					to: {
-						height: '0'
-					}
+					from: { height: 'var(--radix-accordion-content-height)' },
+					to: { height: '0' }
+				},
+				'fade-in': {
+					'0%': { opacity: '0', transform: 'translateY(10px)' },
+					'100%': { opacity: '1', transform: 'translateY(0)' }
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-10px)' }
+				},
+				'pulse-gentle': {
+					'0%, 100%': { opacity: '0.6' },
+					'50%': { opacity: '1' }
+				},
+				'floating-petal': {
+					'0%': { transform: 'translateY(-10%) translateX(-10%) rotate(0deg)', opacity: '0' },
+					'50%': { opacity: '0.8' },
+					'100%': { transform: 'translateY(110%) translateX(10%) rotate(90deg)', opacity: '0' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fade-in 1.5s ease-out forwards',
+				'float': 'float 6s ease-in-out infinite',
+				'pulse-gentle': 'pulse-gentle 4s ease-in-out infinite',
+				'floating-petal': 'floating-petal 15s ease-in-out infinite'
+			},
+			fontFamily: {
+				'playfair': ['"Playfair Display"', 'serif'],
+				'garamond': ['"EB Garamond"', 'serif'],
+				'baskerville': ['"Libre Baskerville"', 'serif']
+			},
+			backgroundImage: {
+				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+				'starry-night': "url('https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?q=80&w=1600')",
+				'forest-mist': "url('https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?q=80&w=1600')",
+				'rose-garden': "url('https://images.unsplash.com/photo-1518495973542-4542c06a5843?q=80&w=1600')"
 			}
 		}
 	},
