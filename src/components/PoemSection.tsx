@@ -58,8 +58,8 @@ const PoemSection: React.FC<PoemSectionProps> = ({ text, index }) => {
         {getVerseIcon()}
       </div>
       <div className="mb-2 italic text-alice-rose/80 text-sm">
-        {index === 0 && "A rosa mais bela do jardim..."}
-        {index === 1 && "Uma rainha em meu reino..."}
+        {index === 0 && "Meu fascínio..."}
+        {index === 1 && "Meu universo..."}
         {index === 2 && "Minha dependência..."}
         {index === 3 && "Para sempre..."}
       </div>
