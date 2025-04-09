@@ -136,8 +136,8 @@ const Index: React.FC = () => {
         <img 
           src="https://i.pinimg.com/originals/c2/5f/2b/c25f2ba78adb5fa23d7807bb58b42d7c.gif" 
           alt="Under Construction" 
-          width="16" 
-          height="16"
+          width="24" 
+          height="24"
         />
         <span>Quero minha galeria cheia do seu rosto, amém</span>
       </div>
