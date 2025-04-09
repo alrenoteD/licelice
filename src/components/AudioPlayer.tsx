@@ -10,7 +10,7 @@ const AudioPlayer: React.FC = () => {
   
   // Initialize audio
   useEffect(() => {
-    const audio = new Audio('/audio/dream_girl.mp3');
+    const audio = new Audio('/audio/everyone_adores_you_at_least_i_do.mp3');
     audio.loop = true;
     audio.volume = volume;
     audioRef.current = audio;
