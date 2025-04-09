@@ -19,13 +19,15 @@ const poem = [
 ];
 
 const romantic2000sQuotes = [
-  "O amor é a chama que queima sem se consumir.",
-  "A distância não importa quando o amor é verdadeiro.",
+  "Eu sou Seu",
+  "Me diga logo seu endereço",
   "Meu coração bate só por ti, Alice.",
   "Só sei que te amo mais do que jamais amei.",
-  "Feliz aniversário, meu amor eterno!",
+  "Feliz aniversário, meu amorzinho!!!!",
   "Cada batida do meu coração é para você, hoje e sempre.",
-  "Que este dia seja tão especial quanto você é para mim."
+  "Que este dia seja tão especial quanto você é para mim.",
+  "Vou te monopolizar pra mim, é bom tomar cuidado.",
+  "Beijão no boca minha gata♥"
 ];
 
 const Index: React.FC = () => {
@@ -120,14 +122,15 @@ const Index: React.FC = () => {
       ))}
       
       {/* Visitor counter - 2000s style */}
-      {showVisitors && (
+      
+      {/* {showVisitors && (
         <div className="fixed top-4 left-1/2 transform -translate-x-1/2 geocities-hit-counter z-20">
           <span className="mr-2">♥</span> 
           Visitantes: {visitorCount.toLocaleString()} 
           <span className="ml-2">♥</span>
         </div>
       )}
-      
+      */}
       {/* Under construction sign - typical for Geocities */}
       <div className="fixed top-16 right-4 under-construction z-20">
         <img 
