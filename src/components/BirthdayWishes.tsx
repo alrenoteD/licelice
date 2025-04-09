@@ -3,11 +3,12 @@ import React from 'react';
 import { Cake, Gift, Heart, Star, PartyPopper } from 'lucide-react';
 
 const birthdayMessages = [
-  "Happy Birthday to the most beautiful rose in my garden, Alice! ❤️",
-  "On your special day, may all your dreams bloom like roses, my beloved.",
-  "Each year with you is a gift I cherish more than anything in this world.",
-  "Happy Birthday to the queen who rules my heart and soul!",
-  "Today we celebrate the day the world received its most precious gift - you."
+  "Feliz aniversário minha garotinha❤️",
+  "Que todos os seus desejos se tornem realidade",
+  "No meu aniversário quero você de presente",
+  "Beijão, minha rainha, que seja um dia alegre!!",
+  "Hoje celebramos o dia em que o Mundo recebeu seu (e meu) presente mais precioso - você",
+  "Dentro de alguns anos quero ter 3 niver pra comemorar: Seu aniversário, meu aniversário, e nosso aniversário (de casamento)"
 ];
 
 interface BirthdayWishesProps {

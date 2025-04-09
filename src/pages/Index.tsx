@@ -91,7 +91,7 @@ const Index: React.FC = () => {
       {showIntro && (
         <div className="fixed inset-0 bg-black z-50 flex items-center justify-center flex-col animate-fade-out" style={{ animationDelay: '3s', animationDuration: '1s' }}>
           <div className="text-alice-red text-3xl sm:text-4xl font-tangerine animate-pulse-gentle mb-4">❤ Para Alice ❤</div>
-          <div className="text-alice-gold text-sm tracking-widest animate-fade-in">Carregando sonhos e sentimentos...</div>
+          <div className="text-alice-gold text-sm tracking-widest animate-fade-in">Carregando meu amor por ti...</div>
         </div>
       )}
       
@@ -134,12 +134,12 @@ const Index: React.FC = () => {
       {/* Under construction sign - typical for Geocities */}
       <div className="fixed top-16 right-4 under-construction z-20">
         <img 
-          src="https://web.archive.org/web/20091027005903/http://www.geocities.com/hk/construction.gif" 
+          src="https://i.pinimg.com/originals/c2/5f/2b/c25f2ba78adb5fa23d7807bb58b42d7c.gif" 
           alt="Under Construction" 
           width="16" 
           height="16"
         />
-        <span>Sempre em construção para você</span>
+        <span>Quero minha galeria cheia do seu rosto, amém</span>
       </div>
       
       {/* Particle effect */}
@@ -154,7 +154,7 @@ const Index: React.FC = () => {
       {/* Geocities-style MIDI player notice */}
       <div className="midi-player">
         <Music size={12} className="text-alice-red mr-1" />
-        <span>♫ Música para Alice ♫</span>
+        <span>♫ Song for Alice ♫</span>
       </div>
       
       {/* Main content */}
@@ -174,7 +174,7 @@ const Index: React.FC = () => {
           {/* Marquee - classic geocities element */}
           <div className="overflow-hidden mt-6 mb-4 w-full">
             <div className="marquee-text text-alice-red/80 text-sm italic">
-              ★ Feliz Aniversário Alice! ★ O meu amor por você cresce a cada dia ★ Você é a flor mais bela do meu jardim ★ Para sempre seu ★ 
+              ★ Feliz Aniversário Alice! ★ O meu amor por você cresce a cada dia, é bom tomar cuidado ★ vamos marcar nosso casamento, que ja ta atrasado ★ Para sempre seu ★ 
             </div>
           </div>
         </header>
@@ -207,18 +207,18 @@ const Index: React.FC = () => {
           </div>
         </main>
         
-        {/* Guestbook - common on Geocities sites */}
+        {/* Guestbook - common on Geocities sites
         <div className="text-center mt-8 mb-4">
           <button className="guestbook-button">✒️ Assine nosso livro de visitas</button>
         </div>
-        
+        */}
         {/* 2000s footer with email and links */}
         <footer className="text-center pb-20 pt-6 text-alice-gold/60 text-xs">
           <p>© 2025 • Criado com amor eterno</p>
-          <p className="mt-1">Melhor visualizado com um coração aberto</p>
+          <p className="mt-1">Melhor visualizado com você aqui, mas fazer o que né</p>
           <div className="mt-4 flex justify-center gap-4">
-            <span className="border-r border-alice-red/30 pr-4">Última atualização: 09.Abril.2025</span>
-            <span>♡ alice_para_sempre@love.com ♡</span>
+            <span className="border-r border-alice-red/30 pr-4">Última atualização: 08.Abril.2025</span>
+            <span>♡ alice_para_sempre@condenada-a-ser-minha-esposa.com ♡</span>
           </div>
         </footer>
       </div>
