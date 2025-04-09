@@ -4,7 +4,9 @@ import AudioPlayer from '@/components/AudioPlayer';
 import ParticleBackground from '@/components/ParticleBackground';
 import PoemSection from '@/components/PoemSection';
 import FloatingPetals from '@/components/FloatingPetals';
-import { Heart } from 'lucide-react';
+import BackgroundCarousel from '@/components/BackgroundCarousel';
+import BirthdayWishes from '@/components/BirthdayWishes';
+import { Heart, Gift, Star, Cake, Music } from 'lucide-react';
 
 const poem = [
   "Quanta sorte tive de conquistar a flor mais bela daquele jardim, aquela rosa pode não se agradar de si mesma, mas, para mim, ela é deslumbrante—muito mais do que qualquer outra rosa ou orquídea dali. Que meu oxigênio se contagie com seu aroma, pois esse, sim, me agrada. Qualquer outro aroma além do seu me sufoca, mas o seu agita o meu corpo, acelera o meu coração, encanta-me. Seu aroma, munido da beleza e da delicadeza, Supera qualquer outra rosa... Seus espinhos podem ferir meu corpo, mas que não toquem mais ninguém além de mim, pois a quero apenas para mim.",
@@ -20,28 +22,37 @@ const romantic2000sQuotes = [
   "O amor é a chama que queima sem se consumir.",
   "A distância não importa quando o amor é verdadeiro.",
   "Meu coração bate só por ti, Alice.",
-  "Só sei que te amo mais do que jamais amei."
-];
-
-const backgroundImages = [
-  'bg-starry-night',
-  'bg-forest-mist',
-  'bg-rose-garden'
+  "Só sei que te amo mais do que jamais amei.",
+  "Feliz aniversário, meu amor eterno!",
+  "Cada batida do meu coração é para você, hoje e sempre.",
+  "Que este dia seja tão especial quanto você é para mim."
 ];
 
 const Index: React.FC = () => {
-  const [currentBgIndex, setCurrentBgIndex] = useState(0);
   const [currentQuote, setCurrentQuote] = useState(0);
   const [showIntro, setShowIntro] = useState(true);
   const [showVisitors, setShowVisitors] = useState(false);
   const [visitorCount, setVisitorCount] = useState(Math.floor(Math.random() * 1000) + 500);
+  const [showSparkles, setShowSparkles] = useState<{x: number, y: number}[]>([]);
   
-  // Change background image every 30 seconds
+  // Add sparkle effect on mouse move
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (Math.random() > 0.9) { // Only add sparkle 10% of the time
+      const newSparkle = {
+        x: e.clientX,
+        y: e.clientY
+      };
+      
+      setShowSparkles(prev => [...prev, newSparkle]);
+      
+      // Remove sparkle after animation
+      setTimeout(() => {
+        setShowSparkles(prev => prev.filter(s => s !== newSparkle));
+      }, 3000);
+    }
+  };
+  
   useEffect(() => {
-    const bgInterval = setInterval(() => {
-      setCurrentBgIndex((prev) => (prev + 1) % backgroundImages.length);
-    }, 30000);
-    
     // Simulate visitor count ticking up
     const visitorInterval = setInterval(() => {
       setVisitorCount(prev => prev + 1);
@@ -60,7 +71,6 @@ const Index: React.FC = () => {
     }, 4000);
     
     return () => {
-      clearInterval(bgInterval);
       clearInterval(visitorInterval);
       clearInterval(quoteInterval);
       clearTimeout(introTimer);
@@ -68,9 +78,12 @@ const Index: React.FC = () => {
   }, []);
   
   return (
-    <div className={`min-h-screen w-full ${backgroundImages[currentBgIndex]} bg-cover bg-fixed bg-center transition-all duration-1000`}>
+    <div className="min-h-screen w-full bg-alice-background" onMouseMove={handleMouseMove}>
+      {/* Background carousel */}
+      <BackgroundCarousel />
+      
       {/* Background overlay */}
-      <div className="bg-overlay"></div>
+      <div className="bg-overlay bg-pattern-hearts"></div>
       
       {/* Intro splash screen */}
       {showIntro && (
@@ -94,14 +107,37 @@ const Index: React.FC = () => {
         <Heart size={30} fill="#ea384c" stroke="#ea384c" />
       </div>
       
+      {/* Sparkle effects from mouse movement */}
+      {showSparkles.map((sparkle, i) => (
+        <div 
+          key={i} 
+          className="sparkle" 
+          style={{
+            left: `${sparkle.x}px`,
+            top: `${sparkle.y}px`
+          }}
+        />
+      ))}
+      
       {/* Visitor counter - 2000s style */}
       {showVisitors && (
-        <div className="fixed top-4 left-1/2 transform -translate-x-1/2 text-xs bg-black/60 border border-alice-red/50 px-3 py-1 text-alice-gold z-20">
+        <div className="fixed top-4 left-1/2 transform -translate-x-1/2 geocities-hit-counter z-20">
           <span className="mr-2">♥</span> 
           Visitantes: {visitorCount.toLocaleString()} 
           <span className="ml-2">♥</span>
         </div>
       )}
+      
+      {/* Under construction sign - typical for Geocities */}
+      <div className="fixed top-16 right-4 under-construction z-20">
+        <img 
+          src="https://web.archive.org/web/20091027005903/http://www.geocities.com/hk/construction.gif" 
+          alt="Under Construction" 
+          width="16" 
+          height="16"
+        />
+        <span>Sempre em construção para você</span>
+      </div>
       
       {/* Particle effect */}
       <ParticleBackground />
@@ -112,21 +148,50 @@ const Index: React.FC = () => {
       {/* Audio player */}
       <AudioPlayer />
       
+      {/* Geocities-style MIDI player notice */}
+      <div className="midi-player">
+        <Music size={12} className="text-alice-red mr-1" />
+        <span>♫ Música para Alice ♫</span>
+      </div>
+      
       {/* Main content */}
       <div className="relative z-10">
         {/* Header */}
         <header className="pt-16 pb-10 text-center">
-          <h1 className="alice-title">
-            Alice
+          <h1 className="alice-title flex items-center justify-center">
+            <Cake size={24} className="text-alice-rose mr-3 animate-pulse-gentle" />
+            <span className="fire-text">Alice</span>
+            <Cake size={24} className="text-alice-rose ml-3 animate-pulse-gentle" />
           </h1>
           <div className="w-32 h-px bg-alice-red mx-auto my-4 animate-pulse-gentle"></div>
           <div className="quote-box max-w-md mx-auto cursor-effect">
             {romantic2000sQuotes[currentQuote]}
           </div>
+          
+          {/* Marquee - classic geocities element */}
+          <div className="overflow-hidden mt-6 mb-4 w-full">
+            <div className="marquee-text text-alice-red/80 text-sm italic">
+              ★ Feliz Aniversário Alice! ★ O meu amor por você cresce a cada dia ★ Você é a flor mais bela do meu jardim ★ Para sempre seu ★ 
+            </div>
+          </div>
         </header>
+        
+        {/* Birthday wishes section */}
+        <BirthdayWishes name="Alice" />
         
         {/* Poem content */}
         <main className="poem-container vintage-border">
+          <div className="text-center mb-8">
+            <div className="glitter-text text-2xl font-tangerine mb-2">Para minha amada</div>
+            <div className="flex justify-center gap-4">
+              <Star size={14} className="text-alice-gold animate-sparkle" />
+              <Heart size={14} className="text-alice-red animate-pulse-gentle" />
+              <Gift size={14} className="text-alice-gold animate-sparkle" />
+              <Heart size={14} className="text-alice-red animate-pulse-gentle" />
+              <Star size={14} className="text-alice-gold animate-sparkle" />
+            </div>
+          </div>
+          
           {poem.map((paragraph, index) => (
             <PoemSection key={index} text={paragraph} index={index} />
           ))}
@@ -139,10 +204,19 @@ const Index: React.FC = () => {
           </div>
         </main>
         
-        {/* 2000s footer with guestbook reference */}
-        <footer className="text-center pb-20 pt-10 text-alice-gold/60 text-xs">
+        {/* Guestbook - common on Geocities sites */}
+        <div className="text-center mt-8 mb-4">
+          <button className="guestbook-button">✒️ Assine nosso livro de visitas</button>
+        </div>
+        
+        {/* 2000s footer with email and links */}
+        <footer className="text-center pb-20 pt-6 text-alice-gold/60 text-xs">
           <p>© 2025 • Criado com amor eterno</p>
           <p className="mt-1">Melhor visualizado com um coração aberto</p>
+          <div className="mt-4 flex justify-center gap-4">
+            <span className="border-r border-alice-red/30 pr-4">Última atualização: 09.Abril.2025</span>
+            <span>♡ alice_para_sempre@love.com ♡</span>
+          </div>
         </footer>
       </div>
     </div>

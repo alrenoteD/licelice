@@ -192,6 +192,45 @@
   .quote-box {
     @apply bg-black/40 border border-alice-red/30 p-4 italic text-alice-rose/80 text-center my-6 mx-auto max-w-lg;
   }
+
+  /* 2000s Geocities-style elements */
+  .geocities-hit-counter {
+    @apply bg-black text-alice-gold border border-alice-red/50 inline-block px-3 py-1 text-xs font-mono;
+    letter-spacing: 1px;
+  }
+  
+  .glitter-text {
+    @apply relative inline-block;
+    background: linear-gradient(90deg, #ea384c, #FFDEE2, #ea384c);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 5s ease infinite;
+  }
+  
+  .fire-text {
+    @apply relative;
+    text-shadow: 0 0 5px #ea384c, 0 0 10px #ea384c, 0 0 15px #ea384c;
+    animation: flicker 3s linear infinite;
+  }
+
+  .blinking-star {
+    @apply absolute inline-block;
+    animation: blink 1.5s infinite;
+  }
+  
+  .marquee-text {
+    @apply whitespace-nowrap;
+    animation: marquee 20s linear infinite;
+  }
+  
+  .guestbook-button {
+    @apply bg-alice-red/80 text-white px-3 py-1 text-xs border border-alice-rose animate-pulse-gentle;
+  }
+  
+  .under-construction {
+    @apply flex items-center gap-2 text-xs text-alice-rose/70 italic;
+  }
 }
 
 /* 2000s website elements */
@@ -257,4 +296,44 @@
   color: #ea384c;
   font-weight: bold;
   animation: cursor-blink 1s infinite;
+}
+
+/* Marquee animation */
+@keyframes marquee {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Shimmer animation */
+@keyframes shimmer {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Flicker animation */
+@keyframes flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { text-shadow: 0 0 5px #ea384c, 0 0 10px #ea384c, 0 0 15px #ea384c; }
+  20%, 24%, 55% { text-shadow: none; }
+}
+
+/* Geocities sparkle */
+.sparkle {
+  position: absolute;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='%23FFDEE2' stroke='%23ea384c' stroke-width='1'%3E%3Cpolygon points='12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2'/%3E%3C/svg%3E");
+  width: 14px;
+  height: 14px;
+  animation: sparkle 3s linear infinite;
+}
+
+/* Geocities-style MIDI player */
+.midi-player {
+  @apply fixed bottom-6 left-6 z-50 flex items-center space-x-2 
+         bg-black/70 border border-alice-red/40 p-2 text-xs text-alice-gold;
+}
+
+/* Background patterns */
+.bg-pattern-hearts {
+  background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z' fill='%23ea384c' fill-opacity='0.05'/%3E%3C/svg%3E");
 }

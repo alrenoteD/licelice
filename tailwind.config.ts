@@ -109,6 +109,14 @@ export default {
 				'heartbeat': {
 					'0%, 100%': { transform: 'scale(1)' },
 					'50%': { transform: 'scale(1.2)' }
+				},
+				'sparkle': {
+					'0%, 100%': { opacity: '0.2' },
+					'50%': { opacity: '1' }
+				},
+				'blink': {
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0' }
 				}
 			},
 			animation: {
@@ -119,7 +127,9 @@ export default {
 				'float': 'float 6s ease-in-out infinite',
 				'pulse-gentle': 'pulse-gentle 4s ease-in-out infinite',
 				'floating-petal': 'floating-petal 15s ease-in-out infinite',
-				'heartbeat': 'heartbeat 2s ease-in-out infinite'
+				'heartbeat': 'heartbeat 2s ease-in-out infinite',
+				'sparkle': 'sparkle 3s ease-in-out infinite',
+				'blink': 'blink 1.5s ease-in-out infinite'
 			},
 			fontFamily: {
 				'playfair': ['"Playfair Display"', 'serif'],
@@ -131,7 +141,10 @@ export default {
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
 				'starry-night': "url('https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?q=80&w=1600')",
 				'forest-mist': "url('https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?q=80&w=1600')",
-				'rose-garden': "url('https://images.unsplash.com/photo-1518495973542-4542c06a5843?q=80&w=1600')"
+				'rose-garden': "url('https://images.unsplash.com/photo-1518495973542-4542c06a5843?q=80&w=1600')",
+				'valentine-roses': "url('https://images.unsplash.com/photo-1518895949257-7621c3c786d7?q=80&w=1600')",
+				'dark-castle': "url('https://images.unsplash.com/photo-1533686510-5d7ddfb1fe3a?q=80&w=1600')",
+				'moonlit-lake': "url('https://images.unsplash.com/photo-1493514789931-586cb221d7a7?q=80&w=1600')"
 			}
 		}
 	},
