@@ -136,10 +136,10 @@ const Index: React.FC = () => {
         <img 
           src="https://i.pinimg.com/originals/c2/5f/2b/c25f2ba78adb5fa23d7807bb58b42d7c.gif" 
           alt="Under Construction" 
-          width="24" 
-          height="24"
+          width="16" 
+          height="16"
         />
-        <span>Quero minha galeria cheia do seu rosto, amém</span>
+        <span>Quero uma galeria só de você, amém</span>
       </div>
       
       {/* Particle effect */}
@@ -174,7 +174,7 @@ const Index: React.FC = () => {
           {/* Marquee - classic geocities element */}
           <div className="overflow-hidden mt-6 mb-4 w-full">
             <div className="marquee-text text-alice-red/80 text-sm italic">
-              ★ Feliz Aniversário Alice! ★ O meu amor por você cresce a cada dia, é bom tomar cuidado ★ vamos marcar nosso casamento, que ja ta atrasado ★ Para sempre seu ★ 
+              ★ Feliz Aniversário Alice! ★ O meu amor por você cresce a cada dia é bom tomar cuidado ★ vamos marcar nosso casamento, que ja ta atrasado ★ Para sempre seu ★ 
             </div>
           </div>
         </header>

@@ -6,7 +6,7 @@ const birthdayMessages = [
   "Feliz aniversário minha garotinha❤️",
   "Que todos os seus desejos se tornem realidade",
   "No meu aniversário quero você de presente",
-  "Beijão, minha rainha, que seja um dia alegre!!",
+  "Beijão minha rainha, que seja um dia feliz e alegre!!",
   "Hoje celebramos o dia em que o Mundo recebeu seu (e meu) presente mais precioso - você",
   "Dentro de alguns anos quero ter 3 niver pra comemorar: Seu aniversário, meu aniversário, e nosso aniversário (de casamento)"
 ];
@@ -30,7 +30,7 @@ const BirthdayWishes: React.FC<BirthdayWishesProps> = ({ name }) => {
     <div className="birthday-section mt-8 mb-12 px-4">
       <div className="birthday-title flex items-center justify-center mb-6 animate-pulse-gentle">
         <PartyPopper className="text-alice-rose mr-2" size={24} />
-        <h2 className="font-tangerine text-4xl text-alice-rose">Happy Birthday {name}</h2>
+        <h2 className="font-tangerine text-4xl text-alice-rose">Feliz Aniversário {name}</h2>
         <Cake className="text-alice-rose ml-2" size={24} />
       </div>
       
